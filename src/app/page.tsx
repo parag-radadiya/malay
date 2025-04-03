@@ -1,103 +1,171 @@
+"use client";
+
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import Image from "next/image";
+import Link from "next/link";
+import Header from "./Header";
+
+interface ImageSliderProps {
+  images: string[];
+  interval?: number;
+  className?: string;
+  onIndexChange?: (index: number) => void; // To notify parent of index changes
+}
+
+const ImageSlider = forwardRef<{ goToPrev: () => void; goToNext: () => void }, ImageSliderProps>(
+  ({ images, interval = 5000, className, onIndexChange }, ref) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Function to update index and notify parent
+    const updateIndex = (newIndex: number) => {
+      // Ensure index wraps around correctly
+      const normalizedIndex = (newIndex + images.length) % images.length;
+      setCurrentIndex(normalizedIndex);
+      onIndexChange?.(normalizedIndex); // Call the callback if provided
+    };
+
+    useImperativeHandle(ref, () => ({
+      goToPrev,
+      goToNext
+    }));
+
+    useEffect(() => {
+      // Notify parent of the initial index
+      if (images.length > 0) {
+         onIndexChange?.(currentIndex);
+      }
+
+      // Only set interval if there's more than one image
+      let timer: NodeJS.Timeout | null = null;
+      if (images.length > 1) {
+        timer = setInterval(() => {
+          updateIndex(currentIndex + 1); // Use the update function
+        }, interval);
+      }
+
+      return () => {
+        if (timer) clearInterval(timer);
+      };
+      // Add currentIndex and onIndexChange to dependency array
+      // Run effect when images array itself changes too
+    }, [images, interval, currentIndex, onIndexChange]); 
+
+    const goToPrev = () => {
+      console.log("goToPrev called via ref");
+      updateIndex(currentIndex - 1); // Use the update function
+    };
+
+    const goToNext = () => {
+      console.log("goToNext called via ref");
+      updateIndex(currentIndex + 1); // Use the update function
+    };
+
+    // Handle case where images array might be empty
+    if (!images || images.length === 0) {
+      return <div className="w-full h-full bg-gray-200"></div>; // Placeholder for no images
+    }
+
+    return (
+      // Removed the outer 'group' div and internal buttons
+      <div className="relative w-full h-full">
+        <Image
+          // Add a key to help React with transitions when the src changes
+          key={images[currentIndex]} 
+          src={images[currentIndex]}
+          alt={`Slide ${currentIndex + 1}`}
+          fill
+          className={`${className} pointer-events-none transition-opacity duration-700 ease-in-out`} // Basic fade transition
+          priority={currentIndex === 0} // Prioritize the first image
+        />
+      </div>
+    );
+  }
+);
+
+
+const ImageSliderWithRef = ImageSlider;
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef<{goToPrev: () => void, goToNext: () => void}>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // Define the images and their corresponding portfolio links
+const sliderItems = [
+  { image: '/images/A1.jpg', link: '/portfolio/project-a1', title: 'INTERIOR' }, // Example title
+  { image: '/images/A2.jpg', link: '/portfolio/project-a2', title: 'LIVING ROOM' },
+  { image: '/images/B1.jpg', link: '/portfolio/project-b1', title: 'BEDROOM DESIGN' },
+  { image: '/images/B2.jpg', link: '/portfolio/project-b2', title: 'MODERN KITCHEN' },
+  { image: '/images/B3.jpg', link: '/portfolio/project-b3', title: 'OFFICE SPACE' },
+  { image: '/images/B4.jpg', link: '/portfolio/project-b4', title: 'EXTERIOR VIEW' },
+];
+
+// Extract just the image paths for the ImageSlider component
+const images = sliderItems.map(item => item.image);
+  // Determine the current portfolio link and title based on the index
+  const currentItem = sliderItems[currentIndex] || sliderItems[0]; // Fallback to first item
+  const currentPortfolioLink = currentItem.link;
+  const currentTitle = currentItem.title; // Get the title
+
+  const handlePrevClick = () => {
+    sliderRef.current?.goToPrev();
+  };
+
+  const handleNextClick = () => {
+    sliderRef.current?.goToNext();
+  };
+
+  return (
+    <div className="relative min-h-screen">
+      <div className="fixed inset-0 -z-10">
+        <ImageSlider 
+          ref={sliderRef}
+          images={images}
+          interval={5000}
+          className="object-cover"
+          onIndexChange={setCurrentIndex}
+        />
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+      
+      <Header />
+      
+      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+        <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+          <div className="flex gap-4">
+          <button
+        type="button"
+        onClick={handlePrevClick}
+        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-10 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-black/30 hover:bg-black/50 cursor-pointer group focus:outline-none transition-colors duration-300"
+        aria-label="Previous Slide"
+      >
+        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>
+        </svg>
+      </button>
+      <button
+        type="button"
+        onClick={handleNextClick}
+        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-10 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-black/30 hover:bg-black/50 cursor-pointer group focus:outline-none transition-colors duration-300"
+        aria-label="Next Slide"
+      >
+        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+        </svg>
+      </button>
+          </div>
+          <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white p-8">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-wider uppercase text-center" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+          {currentTitle}
+        </h1>
+          <Link
+          href={currentPortfolioLink}
+          className="py-2 px-5 bg-white/80 text-black rounded hover:bg-white transition-colors duration-300 text-base font-semibold shadow-md backdrop-blur-sm mt-4" // Adjusted styling
+        >
+          View Project {/* Changed text slightly */}
+        </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </main>
+      </div>
     </div>
   );
 }
