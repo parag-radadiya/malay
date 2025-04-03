@@ -9,19 +9,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative">
-        {/* <div className="fixed inset-0 -z-20">
-          <img 
-            src="/images/A2.jpg" 
-            alt="Background Image" 
-            className="object-cover w-full h-full"
-            style={{ zIndex: -1 }}
-          />
-        </div> */}
+      <body className="relative min-h-screen" suppressHydrationWarning={true}>
+        {/* Header is now rendered inside individual pages */}
         
-        
-        
-        <main className="pt-16 pb-20">
+        <main className="relative">
           {children}
         </main>
         
