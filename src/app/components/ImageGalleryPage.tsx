@@ -77,7 +77,7 @@ function generateGridSpan(index: number, totalImages: number, isMobile: boolean)
     "col-span-1 row-span-3",
     "col-span-1 row-span-1",
     "col-span-1 row-span-2",
-    "col-span-1 row-span-1",
+    "col-span-2 row-span-1",
     "col-span-2 row-span-1",
     "col-span-1 row-span-1",
     "col-span-1 row-span-1",
