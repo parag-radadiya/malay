@@ -91,12 +91,12 @@ export default function Home() {
 
   // Define the images and their corresponding portfolio links
 const sliderItems = [
-  { image: '/images/A1.jpg', link: '/portfolio/project-a1', title: 'INTERIOR' }, // Example title
-  { image: '/images/A2.jpg', link: '/portfolio/project-a2', title: 'LIVING ROOM' },
-  { image: '/images/B1.jpg', link: '/portfolio/project-b1', title: 'BEDROOM DESIGN' },
-  { image: '/images/B2.jpg', link: '/portfolio/project-b2', title: 'MODERN KITCHEN' },
-  { image: '/images/B3.jpg', link: '/portfolio/project-b3', title: 'OFFICE SPACE' },
-  { image: '/images/B4.jpg', link: '/portfolio/project-b4', title: 'EXTERIOR VIEW' },
+  { image: '/images/A1.jpg', link: '/portfolio/architecture', title: 'INTERIOR' }, // Example title
+  { image: '/images/A2.jpg', link: '/portfolio/residential-interiors', title: 'LIVING ROOM' },
+  { image: '/images/B1.jpg', link: '/portfolio/office-interiors', title: 'BEDROOM DESIGN' },
+  { image: '/images/B2.jpg', link: '/portfolio/institutions', title: 'MODERN KITCHEN' },
+  { image: '/images/B3.jpg', link: '/portfolio/retail', title: 'OFFICE SPACE' },
+  { image: '/images/B4.jpg', link: '/portfolio/non-commissioned-work', title: 'EXTERIOR VIEW' },
 ];
 
 // Extract just the image paths for the ImageSlider component
