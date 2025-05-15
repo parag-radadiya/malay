@@ -32,8 +32,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Architecture Photography</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -47,8 +56,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Residential Interior Photography</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -62,8 +80,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Office Interiors Photography</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -77,8 +104,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Institution Photography</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -92,8 +128,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Retail & Restaurants Photography</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -107,8 +152,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Clubhouses Photography</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -122,8 +176,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Analogue Photography I Personal</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>
@@ -137,8 +200,17 @@ export default function Portfolio() {
                     <div className="text-white text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold">Non-commissioned I Personal</h2>
                     </div>
-                    <div className="absolute mt-30 text-left">
-                        <IoIosArrowRoundForward  className="ml-2 text-[120px] text-white opacity-70" />
+                    <div className="absolute mt-70 text-left">
+                        <svg
+                            width="140"
+                            height="25"
+                            viewBox="0 0 150 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <line x1="2" y1="12" x2="148" y2="12" stroke="#FFFFFF" strokeWidth="2" />
+                            <polyline points="138,4 148,12 138,20" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+                        </svg>
                     </div>
                 </div>
             </Link>

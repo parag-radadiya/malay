@@ -59,10 +59,12 @@ export default function Header() {
   );
 
   return (
-      <nav className="fixed top-0 w-full z-50">
+      <nav className="fixed top-0 w-full z-50 font-barlow text-white text-[14px] leading-[21px] font-medium">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
-            <Link href="/" className="text-xl font-bold">Malay</Link>
+            <Link href="/" className="text-xl font-bold">
+              Malay
+            </Link>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
@@ -83,18 +85,18 @@ export default function Header() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-4 ">
-              <Link href="/" className="py-2 px-3 text-sm font-medium text-white hover:text-gray-300 transition">Home</Link>
-              <Link href="/about" className="py-2 px-3 text-sm font-medium text-white hover:text-gray-300 transition">About</Link>
+            <div className="hidden md:flex items-center space-x-4">
+              <Link href="/" className="py-2 px-3 hover:text-gray-300 transition">
+                Home
+              </Link>
+              <Link href="/about" className="py-2 px-3 hover:text-gray-300 transition">
+                About
+              </Link>
 
-              <div
-                  className="relative"
-                  onMouseEnter={handlePortfolioMouseEnter}
-                  onMouseLeave={handlePortfolioMouseLeave}
-              >
+              <div className="relative" onMouseEnter={handlePortfolioMouseEnter} onMouseLeave={handlePortfolioMouseLeave}>
                 <Link
                     href="/portfolio"
-                    className="py-2 px-3 text-sm font-medium transition flex items-center text-white hover:text-gray-300"
+                    className="py-2 px-3 transition flex items-center hover:text-gray-300"
                     aria-haspopup="true"
                     aria-expanded={isPortfolioOpen}
                 >
@@ -102,7 +104,7 @@ export default function Header() {
                 </Link>
                 {isPortfolioOpen && (
                     <div
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white shadow-lg z-50 py-2 "
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white shadow-lg z-50 py-2"
                         onMouseEnter={handlePortfolioMouseEnter}
                         onMouseLeave={handlePortfolioMouseLeave}
                     >
@@ -111,19 +113,20 @@ export default function Header() {
                 )}
               </div>
 
-              <Link href="/contact" className="py-2 px-3 text-sm font-medium text-white hover:text-gray-300 transition">Contact</Link>
+              <Link href="/contact" className="py-2 px-3 hover:text-gray-300 transition">
+                Contact
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-            <div className="fixed inset-0 bg-white z-50 overflow-auto flex flex-col items-center justify-center text-center">
-
+            <div className="fixed inset-0 bg-white z-50 overflow-auto flex flex-col items-center justify-center text-center font-barlow text-black">
               {/* Close Button */}
               <button
                   onClick={toggleMobileMenu}
-                  className="absolute top-5 right-5 p-2 text-black hover:text-gray-500"
+                  className="absolute top-5 right-5 p-2 hover:text-gray-500"
                   aria-label="Close menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,13 +134,17 @@ export default function Header() {
                 </svg>
               </button>
 
-              <Link href="/" onClick={handleMobileLinkClick} className="block py-3 px-4 text-lg font-medium text-black hover:text-gray-500 transition">Home</Link>
-              <Link href="/about" onClick={handleMobileLinkClick} className="block py-3 px-4 text-lg font-medium text-black hover:text-gray-500 transition">About</Link>
+              <Link href="/" onClick={handleMobileLinkClick} className="block py-3 px-4 text-lg hover:text-gray-500 transition">
+                Home
+              </Link>
+              <Link href="/about" onClick={handleMobileLinkClick} className="block py-3 px-4 text-lg hover:text-gray-500 transition">
+                About
+              </Link>
 
               {/* Portfolio Dropdown Button */}
               <button
                   onClick={toggleMobilePortfolio}
-                  className="w-full flex items-center justify-center py-3 px-4 text-lg font-medium text-black hover:text-gray-500 transition"
+                  className="w-full flex items-center justify-center py-3 px-4 text-lg hover:text-gray-500 transition"
                   aria-expanded={isMobilePortfolioOpen}
               >
                 <span>Portfolio</span>
@@ -153,10 +160,11 @@ export default function Header() {
                   </div>
               )}
 
-              <Link href="/contact" onClick={handleMobileLinkClick} className="block py-3 px-4 text-lg font-medium text-black hover:text-gray-500 transition">Contact</Link>
+              <Link href="/contact" onClick={handleMobileLinkClick} className="block py-3 px-4 text-lg hover:text-gray-500 transition">
+                Contact
+              </Link>
             </div>
         )}
-
       </nav>
   );
 }

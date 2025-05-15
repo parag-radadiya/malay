@@ -135,22 +135,41 @@ const images = sliderItems.map(item => item.image);
           <button
         type="button"
         onClick={handlePrevClick}
-        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-10 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-black/30 hover:bg-black/50 cursor-pointer group focus:outline-none transition-colors duration-300"
+        className="absolute top-1/2 left-2 md:left-18 -translate-y-1/2 z-10 flex items-center justify-center   cursor-pointer group focus:outline-none transition-colors duration-300"
         aria-label="Previous Slide"
+
       >
-        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>
-        </svg>
+              <svg
+                  width="140"
+                  height="25"
+                  viewBox="0 0 150 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+              >
+                  <line x1="2" y1="12" x2="148" y2="12" stroke="#CCCCCC" strokeWidth="1" />
+                  <polyline points="12,4 2,12 12,20" fill="none" stroke="#CCCCCC" strokeWidth="1" />
+              </svg>
+        {/*<svg className="w-4 h-4 md:w-5 md:h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">*/}
+        {/*  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>*/}
+        {/*</svg>*/}
       </button>
       <button
         type="button"
         onClick={handleNextClick}
-        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-10 flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-black/30 hover:bg-black/50 cursor-pointer group focus:outline-none transition-colors duration-300"
+        className="absolute top-1/2 right-4 md:right-18 -translate-y-1/2 z-10 flex items-center justify-center cursor-pointer group focus:outline-none transition-colors duration-300"
         aria-label="Next Slide"
       >
-        <svg className="w-4 h-4 md:w-5 md:h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-        </svg>
+          <svg
+              width="140"
+              height="25"
+              viewBox="0 0 150 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+          >
+              <line x1="2" y1="12" x2="148" y2="12" stroke="#CCCCCC" strokeWidth="1" />
+              <polyline points="138,4 148,12 138,20" fill="none" stroke="#CCCCCC" strokeWidth="1" />
+          </svg>
+
       </button>
           </div>
           <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white p-8">
@@ -159,7 +178,7 @@ const images = sliderItems.map(item => item.image);
         </h1>
           <Link
           href={currentPortfolioLink}
-          className="py-2 px-5 bg-white/80 text-black rounded hover:bg-white transition-colors duration-300 text-base font-semibold shadow-md backdrop-blur-sm mt-4" // Adjusted styling
+          className="py-3 px-7 bg-white/80 text-black rounded-full hover:bg-white transition-colors duration-300 text-base font-semibold shadow-md backdrop-blur-sm mt-4" // Adjusted styling
         >
           View Project {/* Changed text slightly */}
         </Link>

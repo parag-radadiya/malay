@@ -32,7 +32,7 @@ export default function Footer() {
   };
 
   return (
-      <footer className="w-full bg-white py-8 h-[80vh]">
+      <footer className="w-full bg-white py-8 h-[100vh]">
         <div className="max-w-6xl mx-auto px-4 flex flex-col items-center text-center space-y-6 mt-40">
 
           {/* Social Icons */}
@@ -84,7 +84,17 @@ export default function Footer() {
 
           {/* Scroll to Top Arrow */}
           <button onClick={scrollToTop} aria-label="Scroll to top" className="text-gray-500 hover:text-gray-900 transition mt-10">
-            <FaArrowUp size={20} />
+            <svg
+                width="25"
+                height="100"
+                viewBox="0 0 24 150"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="12" y1="2" x2="12" y2="148" stroke="#CCCCCC" strokeWidth="2" />
+              <polyline points="4,12 12,2 20,12" fill="none" stroke="#CCCCCC" strokeWidth="2" />
+            </svg>
+
           </button>
 
         </div>
