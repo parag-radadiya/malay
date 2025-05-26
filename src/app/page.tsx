@@ -173,16 +173,18 @@ const images = sliderItems.map(item => item.image);
       </button>
           </div>
           <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white p-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-wider uppercase text-center" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+          <h1 className="text-4xl md:text-5xl  mb-6 uppercase text-center tracking-wider">
           {currentTitle}
         </h1>
-          <Link
-          href={currentPortfolioLink}
-          className="py-3 px-7 bg-white/80 text-black rounded-full hover:bg-white transition-colors duration-300 text-base font-semibold shadow-md backdrop-blur-sm mt-4" // Adjusted styling
-        >
-          View Project {/* Changed text slightly */}
-        </Link>
-        </div>
+              <Link
+                  href={currentPortfolioLink}
+                  className="py-3 px-7 text-white rounded-full font-thin hover:opacity-90 transition-colors duration-300 text-base font-semibold shadow-md backdrop-blur-sm mt-4 tracking-wider"
+                  style={{ backgroundColor: '#a65561' }}
+              >
+                  SEE MORE
+              </Link>
+
+          </div>
         </main>
       </div>
     </div>
