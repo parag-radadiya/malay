@@ -16,7 +16,7 @@ export default function Portfolio() {
 
                 {/* Portfolio Links */}
                 <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-                    <h1 className="text-white text-4xl font-bold tracking-wide text-center">
+                    <h1 className="text-white text-4xl tracking-wide text-center">
                         PORTFOLIO LINKS
                     </h1>
                 </div>
@@ -30,7 +30,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Architecture Photography</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Architecture Photography</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -54,7 +54,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Residential Interior Photography</h2>
+                        <h2 className="text-3xl sm:text-4xl">Residential Interior Photography</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -78,7 +78,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Office Interiors Photography</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Office Interiors Photography</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -102,7 +102,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Institution Photography</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Institution Photography</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -126,7 +126,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Retail & Restaurants Photography</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Retail & Restaurants Photography</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -150,7 +150,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Clubhouses Photography</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Clubhouses Photography</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -174,7 +174,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Analogue Photography I Personal</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Analogue Photography I Personal</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg
@@ -198,7 +198,7 @@ export default function Portfolio() {
                 {/* Text & Link */}
                 <div className="flex relative">
                     <div className="text-white text-left">
-                        <h2 className="text-3xl sm:text-4xl font-bold">Non-commissioned I Personal</h2>
+                        <h2 className="text-3xl sm:text-4xl ">Non-commissioned I Personal</h2>
                     </div>
                     <div className="absolute mt-70 text-left">
                         <svg

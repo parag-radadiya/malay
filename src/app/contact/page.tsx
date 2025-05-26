@@ -11,8 +11,8 @@ export default function Contact() {
             >
                 <Header />
                 <div className="absolute inset-0 bg-black/40"></div> {/* Dark overlay */}
-                <h1 className="relative text-5xl sm:text-6xl font-bold mt-96 text-white">Get in Touch</h1>
-                <p className="relative text-lg sm:text-xl mt-2 text-white">Always excited to talk!</p>
+                <h1 className="relative text-5xl sm:text-6xl mt-96 text-white tracking-wider uppercase">Get in Touch</h1>
+                <p className="relative text-lg sm:text-xl mt-2 text-white uppercase">Always excited to talk!</p>
             </div>
 
             {/* New Section After Image */}

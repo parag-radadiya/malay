@@ -11,7 +11,7 @@ export default function About() {
             >
                 <Header />
                 <div className="relative inset-0 bg-white bg-opacity-50"></div>
-                <h1 className=" text-5xl font-bold mt-50 text-white">HELLO Y'ALL!</h1>
+                <h1 className="mt-50 text-white text-4xl md:text-5xl  mb-6 uppercase text-center tracking-wider">HELLO Y'ALL!</h1>
             </div>
 
             {/* Content Section */}
