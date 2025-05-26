@@ -27,3 +27,13 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif; /* ✅ Barlow Condensed applied */
   overflow-x: hidden;
 }
+.barlow-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 61px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
